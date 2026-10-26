@@ -110,7 +110,9 @@ It's easier, and the reasons are boring in the best way. There's one binary to i
 It's also better, because one tool can see the whole picture. A plan is a diff against what's on the servers right now, line by line for files, next to the cloud changes that cause it. `conn3x drift` checks both layers and exits 2 when something changed by hand, so a scheduled job hears about a hand edit the morning after, not the next time someone applies. And the servers need nothing extra. Conn3x reaches them over plain SSH, with no agent to install and no Python to keep in step.
 
 <figure>
-  <img src="/media/blog/why-conn3x/infographic.png" width="1600" height="2534" loading="lazy" decoding="async" alt="Infographic: the same deploy done with Terraform plus Ansible, with four hand-off points marked, and done with one Conn3x plan." />
+  <a href="/media/blog/why-conn3x/infographic.png">
+    <img src="/media/blog/why-conn3x/infographic.png" width="1600" height="2534" loading="lazy" decoding="async" alt="Infographic: the same deploy done with Terraform plus Ansible, with four hand-off points marked, and done with one Conn3x plan." />
+  </a>
   <figcaption>The same deploy, two ways. Every Conn3x detail comes from the v0.2.2 README and docs.</figcaption>
 </figure>
 

@@ -56,6 +56,14 @@ test.describe("without JavaScript", () => {
     await page.goto(POST);
     await expect(page.locator("[data-clip] video").first()).toHaveAttribute("controls", "");
   });
+
+  test("the infographic opens its full-size image", async ({ page }) => {
+    await page.goto(POST);
+    const imageLink = page.locator('figure a[href="/media/blog/why-conn3x/infographic.png"]');
+    await expect(imageLink.locator("img")).toHaveAttribute("src", "/media/blog/why-conn3x/infographic.png");
+    await imageLink.click();
+    await expect(page).toHaveURL(/\/media\/blog\/why-conn3x\/infographic\.png$/);
+  });
 });
 
 test("the clip's button sits outside its caption", async ({ page }) => {
